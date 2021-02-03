@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run titanic_strm.py
+web: setup setup.sh && streamlit run titanic_strm.py
