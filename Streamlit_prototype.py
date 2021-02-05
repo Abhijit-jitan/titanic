@@ -39,11 +39,11 @@ def user_input():
             "numeric_ticket":numeric_ticket,"Sex_female":Sex_female,"Sex_male":Sex_male,"Pclass_1": Pclass_1, "Pclass_2": Pclass_2, "Pclass_3": Pclass_3,
             "Embarked_C":Embarked_C,"Embarked_Q":Embarked_Q, "Embarked_S":Embarked_S}
     df = pd.DataFrame(df, index = [0])
-    return data
+    return df
 
-user_data = user_input()
+data = user_input()
 
-prediction = model.predict(user_data)
+prediction = model.predict(data)
 st.title("Survival Prediction")
 if prediction[0] == 1:
     st.write("**You probably would have made it!**")
