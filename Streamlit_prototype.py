@@ -17,8 +17,6 @@ st.write("""
          ## How it works:
          """)
 
-st.markdown("[You can find more facts about the Titanic here](https://www.telegraph.co.uk/travel/lists/titanic-fascinating-facts/#:~:text=1.,2.)")        
-
 st.sidebar.header("User Input Parameters")
 
 def user_input():
@@ -35,7 +33,7 @@ def user_input():
     Pclass_1 = 1 if Pclass == 1 else 0; Pclass_2 = 1 if Pclass == 2 else 0; Pclass_3 = 1 if Pclass == 3 else 0
     boarding = st.sidebar.selectbox("Where did you board the Titanic?", ["Cherbourg","Queenstown","Southampton"])
     Embarked_C = 1 if boarding == "Cherbourg" else 0; Embarked_Q = 1 if boarding == "Queenstown" else 0; Embarked_S = 1 if boarding == "Southampton" else 0
-    data = {"Age": age,"norm_fare":np.log(fare+1),"SibSp":SibSp,"Parch":Parch,"cabin_multiple": cabin_multiple,
+    df = {"Age": age,"norm_fare":np.log(fare+1),"SibSp":SibSp,"Parch":Parch,"cabin_multiple": cabin_multiple,
             "numeric_ticket":numeric_ticket,"Sex_female":Sex_female,"Sex_male":Sex_male,"Pclass_1": Pclass_1, "Pclass_2": Pclass_2, "Pclass_3": Pclass_3,
             "Embarked_C":Embarked_C,"Embarked_Q":Embarked_Q, "Embarked_S":Embarked_S}
     df = pd.DataFrame(df, index = [0])
