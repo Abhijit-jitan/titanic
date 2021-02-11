@@ -4,20 +4,7 @@ import streamlit as st
 import random as rd
 import pickle
 np.random.seed(13) #random seed to keep predictions consistent
-
 model = pickle.load(open("model.pickle",'rb'))
-
-
-## STREAMLIT
-st.write("""
-         # Would you have survived the Titanic Disaster?""")
-st.image("https://media1.faz.net/ppmedia/aktuell/83311481/1.1703919/format_top1_breit/der-untergang-der-titanic-1912.jpg",
-         caption = "This disaster.")
-st.write("""
-         ## How it works:
-         """)
-
-st.sidebar.header("User Input Parameters")
 
 def user_input():
     age = st.slider("Your Age", 1,75,30)
